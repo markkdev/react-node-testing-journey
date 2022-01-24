@@ -18,7 +18,7 @@ const defaultValues = {
   rating: 3,
 };
 
-function ReviewForm() {
+function ReviewForm({ onCompleted }) {
   const {
     register,
     handleSubmit,
@@ -29,7 +29,10 @@ function ReviewForm() {
     resolver: yupResolver(schema),
     defaultValues,
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => {
+    console.log(data);
+    onCompleted();
+  };
   const rating = watch('rating');
   return (
     <form className={s.root} onSubmit={handleSubmit(onSubmit)}>
