@@ -1,0 +1,7 @@
+.full {
+  @apply fill-red-500 stroke-red-500 stroke-1;
+}
+
+.empty {
+  @apply fill-transparent stroke-slate-500 stroke-1;
+}

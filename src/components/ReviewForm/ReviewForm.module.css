@@ -9,3 +9,7 @@
 .button {
   @apply w-full;
 }
+
+.stars {
+  @apply mb-4;
+}

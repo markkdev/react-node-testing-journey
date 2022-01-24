@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Button, Input } from '../common';
+import { Button, Input, Stars } from '../common';
 import s from './ReviewForm.module.css';
 
 const schema = yup
@@ -15,7 +15,7 @@ const schema = yup
   .required();
 
 const defaultValues = {
-  rating: 5,
+  rating: 3,
 };
 
 function ReviewForm() {
@@ -23,11 +23,14 @@ function ReviewForm() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
+    setValue,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues,
   });
   const onSubmit = data => console.log(data);
+  const rating = watch('rating');
   return (
     <form className={s.root} onSubmit={handleSubmit(onSubmit)}>
       <Input
@@ -51,7 +54,13 @@ function ReviewForm() {
         errors={errors?.review?.message}
         type="textarea"
         rows={4}
+        cols={4}
         register={register('review')}
+      />
+      <Stars
+        rating={rating}
+        className={s.stars}
+        onClick={value => setValue('rating', value)}
       />
       <Button type="submit" name="submit-review" className={s.button}>
         Submit

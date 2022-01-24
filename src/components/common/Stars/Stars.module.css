@@ -1,7 +1,7 @@
-.full {
-    @apply fill-black
+.root {
+  @apply flex flex-row align-middle justify-center items-center w-full;
 }
 
-.empty {
-    @apply fill-transparent outline-black
+.buttonWrapper {
+  @apply bg-transparent border-none m-0 px-3;
 }

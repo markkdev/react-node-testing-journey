@@ -2,15 +2,23 @@ import React from 'react';
 import s from './Input.module.css';
 import cn from 'classnames';
 
-function Input({ className, label, name, errors, register, ...rest }) {
+function Input({
+  className,
+  label,
+  name,
+  errors,
+  register,
+  type = 'input',
+  ...rest
+}) {
+  const InputType = type;
   return (
     <span className={cn(s.root, className)}>
       <label className={cn(s.label)} htmlFor={name}>
         {label}
       </label>
-      <input
+      <InputType
         className={cn(s.input)}
-        type="text"
         name={name}
         id={name}
         {...register}

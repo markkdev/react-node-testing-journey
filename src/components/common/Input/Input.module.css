@@ -3,7 +3,7 @@
 }
 
 .input {
-  @apply border border-slate-100 rounded-lg pl-2 py-2 shadow-sm focus-within:outline-sky-500;
+  @apply border border-slate-100 rounded-lg pl-2 py-2 shadow-sm focus-within:outline-sky-500 resize-none;
 }
 
 .label {
