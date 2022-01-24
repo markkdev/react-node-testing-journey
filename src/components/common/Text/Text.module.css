@@ -1,0 +1,23 @@
+.root {
+  @apply m-0 p-0;
+}
+
+.h1 {
+  @apply text-4xl font-bold;
+}
+
+.h2 {
+  @apply text-3xl font-semibold;
+}
+
+.h3 {
+  @apply text-2xl;
+}
+
+.h4 {
+  @apply text-xl;
+}
+
+.p {
+  @apply text-lg;
+}

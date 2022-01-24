@@ -1,0 +1,7 @@
+.full {
+    @apply fill-black
+}
+
+.empty {
+    @apply fill-transparent outline-black
+}

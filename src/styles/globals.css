@@ -1,9 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-white;
+}
+
 html,
-body {
+body,
+#__next {
+  height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1;
+}
+
+body {
+  max-width: 1033px;
+  margin: 0 auto;
 }
 
 a {

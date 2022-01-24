@@ -1,0 +1,11 @@
+.root {
+  @apply w-2/4 flex flex-col justify-start items-start p-6 border-0 border-slate-500 shadow-md rounded-xl;
+}
+
+.input {
+  @apply mb-4 w-full;
+}
+
+.button {
+  @apply w-full;
+}
