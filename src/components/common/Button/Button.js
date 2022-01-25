@@ -6,7 +6,7 @@ function Button({ name, onClick, className, children, ...rest }) {
   return (
     <button
       className={cn(s.root, className)}
-      name={name}
+      aria-label={name}
       onClick={onClick}
       {...rest}
     >

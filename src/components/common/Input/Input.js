@@ -19,7 +19,7 @@ function Input({
       </label>
       <InputType
         className={cn(s.input)}
-        name={name}
+        aria-label={name}
         id={name}
         {...register}
         {...rest}

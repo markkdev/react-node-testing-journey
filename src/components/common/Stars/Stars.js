@@ -4,7 +4,7 @@ import cn from 'classnames';
 import s from './Stars.module.css';
 import { Button } from '..';
 
-function Stars({ rating, className, onClick }) {
+function Stars({ rating, className, onClick, error }) {
   const [hoverIndex, setHoverIndex] = useState(null);
   const stars = [];
   for (let i = 0; i < 5; i++) {
@@ -16,7 +16,7 @@ function Stars({ rating, className, onClick }) {
         className={s.buttonWrapper}
         onMouseEnter={() => setHoverIndex(i)}
         onMouseLeave={() => setHoverIndex(null)}
-        onClick={() => onClick(i + 1)}
+        onClick={() => onClick(i === rating - 1 ? 0 : i + 1)}
         type="button"
       >
         <Star isEmpty={isEmpty} />
@@ -25,7 +25,8 @@ function Stars({ rating, className, onClick }) {
   }
   return (
     <div role="presentation" className={cn(s.root, className)}>
-      {stars}
+      <div className={s.starContainer}>{stars}</div>
+      <span className={s.error}>{error || ''}</span>
     </div>
   );
 }

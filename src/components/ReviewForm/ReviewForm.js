@@ -10,12 +10,16 @@ const schema = yup
     firstName: yup.string().required('Please provide your first name'),
     title: yup.string().required('Please provide a title'),
     review: yup.string().required('Please provide your review'),
-    rating: yup.number().min(0).max(5).required('Please provide a rating'),
+    rating: yup
+      .number()
+      .min(1, 'Your rating must be greater than or equal to 1')
+      .max(5)
+      .required('Please provide a rating'),
   })
   .required();
 
 const defaultValues = {
-  rating: 3,
+  rating: 5,
 };
 
 function ReviewForm({ onCompleted }) {
@@ -30,7 +34,6 @@ function ReviewForm({ onCompleted }) {
     defaultValues,
   });
   const onSubmit = data => {
-    console.log(data);
     onCompleted();
   };
   const rating = watch('rating');
@@ -63,6 +66,7 @@ function ReviewForm({ onCompleted }) {
       <Stars
         rating={rating}
         className={s.stars}
+        error={errors?.rating?.message}
         onClick={value => setValue('rating', value)}
       />
       <Button type="submit" name="submit-review" className={s.button}>
