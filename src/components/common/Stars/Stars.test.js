@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Stars } from '.';
 
 describe('Stars Component', () => {
@@ -34,13 +35,21 @@ describe('Stars Component', () => {
   it('displays 4 full stars and 1 empty one when hovering on the 4th star', () => {
     render(<Stars {...props} />);
     let emptyStars = 0;
-    screen.getAllByTitle('star-icon');
-    const zero = screen.getAllByTitle('star-icon').reduce((acc, star) => {
-      if (star.getAttribute('class') === 'full') return acc - 1;
+
+    userEvent.hover(screen.getByRole('button', { name: 'select-rating-4' }));
+
+    screen.getAllByTitle('star-icon').forEach(star => {
+      if (star.getAttribute('class') === 'full') return;
       emptyStars += 1;
-      return acc;
-    }, props.rating);
-    expect(zero).toEqual(0);
-    expect(emptyStars).toEqual(2);
+    });
+
+    expect(emptyStars).toEqual(1);
+  });
+
+  it('fires a click event with the number 4 when the 4th star is clicked', () => {
+    render(<Stars {...props} />);
+    const star = screen.getByRole('button', { name: 'select-rating-4' });
+    userEvent.click(star);
+    expect(onClick).toHaveBeenCalledWith(4);
   });
 });
