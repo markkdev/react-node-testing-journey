@@ -1,5 +1,5 @@
 {
-  "name": "js-testing",
+  "name": "react-node-testing",
   "private": true,
   "scripts": {
     "dev": "next dev",

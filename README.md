@@ -1,4 +1,4 @@
-# JS-Testing
+# React & Node Testing
 
 The purpose of this application is to demonstrate testing recipes across the front and back ends using
 
