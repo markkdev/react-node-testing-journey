@@ -6,26 +6,30 @@ import { Button } from '..';
 
 function Stars({ rating, className, onClick, error }) {
   const [hoverIndex, setHoverIndex] = useState(null);
-  const stars = [];
-  for (let i = 0; i < 5; i++) {
-    const isEmpty =
-      (hoverIndex !== null && hoverIndex < i) ||
-      (rating <= i && hoverIndex === null);
-    stars.push(
-      <Button
-        className={s.buttonWrapper}
-        onMouseEnter={() => setHoverIndex(i)}
-        onMouseLeave={() => setHoverIndex(null)}
-        onClick={() => onClick(i === rating - 1 ? 0 : i + 1)}
-        type="button"
-      >
-        <Star isEmpty={isEmpty} />
-      </Button>,
-    );
-  }
+
   return (
     <div role="presentation" className={cn(s.root, className)}>
-      <div className={s.starContainer}>{stars}</div>
+      <div className={s.starContainer}>
+        {new Array(5).fill(0).map((_, i) => {
+          const key = `star-icon-${i}`;
+          const isEmpty =
+            (hoverIndex !== null && hoverIndex < i) ||
+            (rating <= i && hoverIndex === null);
+          return (
+            <Button
+              key={key}
+              className={s.buttonWrapper}
+              onMouseEnter={() => setHoverIndex(i)}
+              onMouseLeave={() => setHoverIndex(null)}
+              onClick={() => onClick(i === rating - 1 ? 0 : i + 1)}
+              type="button"
+              name={`select-rating-${i + 1}`}
+            >
+              <Star isEmpty={isEmpty} />
+            </Button>
+          );
+        })}
+      </div>
       <span className={s.error}>{error || ''}</span>
     </div>
   );

@@ -1,4 +1,4 @@
 {
   "extends": ["next/core-web-vitals", "prettier"],
-  "plugins": ["jsx-a11y"]
+  "plugins": ["jsx-a11y", "testing-library", "jest-dom"]
 }

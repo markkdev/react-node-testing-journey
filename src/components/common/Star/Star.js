@@ -8,6 +8,7 @@ function Star({ isEmpty }) {
     <StarIcon
       className={cn({ [s.full]: !isEmpty, [s.empty]: isEmpty })}
       size={32}
+      title="star-icon"
     />
   );
 }
