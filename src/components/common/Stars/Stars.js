@@ -35,4 +35,4 @@ function Stars({ rating, className, onClick, error }) {
   );
 }
 
-export default memo(Stars);
+export default Stars;

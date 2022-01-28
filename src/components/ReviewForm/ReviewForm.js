@@ -29,6 +29,7 @@ function ReviewForm({ onCompleted }) {
     formState: { errors },
     watch,
     setValue,
+    getValues,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues,
@@ -38,7 +39,11 @@ function ReviewForm({ onCompleted }) {
   };
   const rating = watch('rating');
   return (
-    <form className={s.root} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={s.root}
+      onSubmit={handleSubmit(onSubmit)}
+      aria-label="Add a review"
+    >
       <Input
         className={s.input}
         name="firstname"
@@ -67,7 +72,9 @@ function ReviewForm({ onCompleted }) {
         rating={rating}
         className={s.stars}
         error={errors?.rating?.message}
-        onClick={value => setValue('rating', value)}
+        onClick={value => {
+          setValue('rating', value);
+        }}
       />
       <Button type="submit" name="submit-review" className={s.button}>
         Submit
