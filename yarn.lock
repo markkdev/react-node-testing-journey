@@ -3175,6 +3175,15 @@ jest-config@^27.4.7:
     pretty-format "^27.4.6"
     slash "^3.0.0"
 
+jest-css-modules-transform@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/jest-css-modules-transform/-/jest-css-modules-transform-4.3.0.tgz#e3599b6b9326230f9c127953aca99f91d9286ab1"
+  integrity sha512-0ACv/lpFK3oUdNkCZTJ6t5X4jUzGw2YnqBQz2fd+RwrGex+C92e0KSkkWmGUdG9wJ8emapi1Xm1IIqUqdkN3/g==
+  dependencies:
+    camelcase "^6.2.0"
+    postcss "^7.0.30 || ^8.0.0"
+    postcss-nested "^4.2.1 || ^5.0.0"
+
 jest-diff@^27.0.0, jest-diff@^27.4.6:
   version "27.4.6"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-27.4.6.tgz#93815774d2012a2cbb6cf23f84d48c7a2618f98d"
@@ -3876,7 +3885,7 @@ nanoclone@^0.2.1:
   resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"
   integrity sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==
 
-nanoid@^3.1.23, nanoid@^3.1.30:
+nanoid@^3.1.23, nanoid@^3.1.30, nanoid@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
   integrity sha512-fmsZYa9lpn69Ad5eDn7FMcnnSR+8R34W9qJEijxYhTbfOWzr22n1QxCMzXLK+ODyW2973V3Fux959iQoUxzUIA==
@@ -4209,7 +4218,7 @@ postcss-load-config@^3.1.0:
     lilconfig "^2.0.4"
     yaml "^1.10.2"
 
-postcss-nested@5.0.6:
+postcss-nested@5.0.6, "postcss-nested@^4.2.1 || ^5.0.0":
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-5.0.6.tgz#466343f7fc8d3d46af3e7dba3fcd47d052a945bc"
   integrity sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==
@@ -4237,6 +4246,15 @@ postcss@8.2.15:
     colorette "^1.2.2"
     nanoid "^3.1.23"
     source-map "^0.6.1"
+
+"postcss@^7.0.30 || ^8.0.0":
+  version "8.4.6"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.6.tgz#c5ff3c3c457a23864f32cb45ac9b741498a09ae1"
+  integrity sha512-OovjwIzs9Te46vlEx7+uXB0PLijpwjXGKXjVGGPIGubGpq7uh5Xgf6D6FiJ/SzJMBosHDp6a2hiXOS97iBXcaA==
+  dependencies:
+    nanoid "^3.2.0"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
 
 postcss@^8.4.5:
   version "8.4.5"
@@ -4383,6 +4401,11 @@ react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-loader-spinner@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-5.1.0.tgz#d0d927ba554ad16fc2cc4e09955df8fdbb54491c"
+  integrity sha512-+t6Fo0HQH0/8pGRcyE18V9D2kPcnNIe2LBBfuE+9jsRqE+g66lt+BkEo8TY23tP5gmCcyUxIW3efn92YhoSLWQ==
 
 react-redux@^7.2.6:
   version "7.2.6"
@@ -4659,7 +4682,7 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-source-map-js@^1.0.1:
+source-map-js@^1.0.1, source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==

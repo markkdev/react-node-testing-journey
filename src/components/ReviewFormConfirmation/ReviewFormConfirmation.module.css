@@ -1,0 +1,15 @@
+.root {
+  @apply w-2/5 flex flex-col justify-start items-start p-6 border-0 border-slate-500 shadow-md rounded-xl;
+}
+
+.formField {
+  @apply font-bold;
+}
+
+.formValue {
+  @apply text-xl mt-1;
+}
+
+.fieldContainer {
+  @apply mb-2 flex flex-col justify-between w-full bg-slate-50 rounded-lg p-4;
+}

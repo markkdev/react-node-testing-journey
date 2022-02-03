@@ -8,9 +8,9 @@ function Review() {
   const router = useRouter();
   return (
     <Layout>
-      <Text variant="h1">Leave a review!</Text>
+      <Text variant="h1">Leave a review</Text>
       <div className="mt-10 w-full mx-auto flex justify-center">
-        <ReviewForm onCompleted={() => router.push('/thanks')} />
+        <ReviewForm onCompleted={() => router.push('/confirm')} />
       </div>
     </Layout>
   );

@@ -18,7 +18,7 @@ describe('Leave a Review', () => {
       getInput('review').type(review);
       getStarButton(3).click();
       getButton('submit-review').click();
-      cy.location('pathname').should('eq', '/thanks');
+      cy.location('pathname').should('eq', '/confirm');
     });
   });
 
@@ -41,7 +41,7 @@ describe('Leave a Review', () => {
       cy.location('pathname').should('eq', '/review');
       getInput('firstname').type(firstname);
       getButton('submit-review').click();
-      cy.location('pathname').should('eq', '/thanks');
+      cy.location('pathname').should('eq', '/confirm');
     });
   });
 });

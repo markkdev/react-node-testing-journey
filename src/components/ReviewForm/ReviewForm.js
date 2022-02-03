@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Button, Input, Stars } from '../common';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectReviewForm, setFormValues } from '../../slices/review';
 import s from './ReviewForm.module.css';
 
 const schema = yup
@@ -18,11 +20,9 @@ const schema = yup
   })
   .required();
 
-const defaultValues = {
-  rating: 5,
-};
-
 function ReviewForm({ onCompleted }) {
+  const dispatch = useDispatch();
+  const reviewForm = useSelector(selectReviewForm);
   const {
     register,
     handleSubmit,
@@ -32,12 +32,14 @@ function ReviewForm({ onCompleted }) {
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues,
+    defaultValues: reviewForm,
   });
   const onSubmit = data => {
+    dispatch(setFormValues(data));
     onCompleted();
   };
   const rating = watch('rating');
+
   return (
     <form
       className={s.root}

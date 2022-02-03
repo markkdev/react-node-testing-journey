@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render, screen, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ReviewForm } from '.';
+import { renderWithStore } from '../../test/utils';
 
 describe('ReviewForm Component', () => {
   const firstname = 'Mark';
@@ -18,7 +19,7 @@ describe('ReviewForm Component', () => {
   });
 
   it('displays the form', () => {
-    render(<ReviewForm onCompleted={onCompleted} />);
+    renderWithStore(<ReviewForm onCompleted={onCompleted} />);
     expect(
       screen.getByRole('form', { name: 'Add a review' }),
     ).toBeInTheDocument();
@@ -26,7 +27,7 @@ describe('ReviewForm Component', () => {
 
   describe('Review Form Happy Path', () => {
     it('allows you to fill and submit the form', async () => {
-      render(<ReviewForm onCompleted={onCompleted} />);
+      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.type(getInput('firstname'), firstname);
       expect(getInput('firstname')).toHaveValue(firstname);
       userEvent.type(getInput('title'), title);
@@ -44,7 +45,7 @@ describe('ReviewForm Component', () => {
 
   describe('Review Form Missing Inputs', () => {
     it('fails if the firstname is missing', async () => {
-      render(<ReviewForm onCompleted={onCompleted} />);
+      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.type(getInput('title'), title);
       expect(getInput('title')).toHaveValue(title);
       userEvent.type(getInput('review'), review);
@@ -59,7 +60,7 @@ describe('ReviewForm Component', () => {
     });
 
     it('fails if the title is missing', async () => {
-      render(<ReviewForm onCompleted={onCompleted} />);
+      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.type(getInput('firstname'), firstname);
       expect(getInput('firstname')).toHaveValue(firstname);
       userEvent.type(getInput('review'), review);
@@ -74,7 +75,7 @@ describe('ReviewForm Component', () => {
     });
 
     it('fails if the review is missing', async () => {
-      render(<ReviewForm onCompleted={onCompleted} />);
+      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.type(getInput('firstname'), firstname);
       expect(getInput('firstname')).toHaveValue(firstname);
       userEvent.type(getInput('title'), title);
@@ -89,7 +90,7 @@ describe('ReviewForm Component', () => {
     });
 
     it('fails if no stars are selected', async () => {
-      render(<ReviewForm onCompleted={onCompleted} />);
+      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.type(getInput('firstname'), firstname);
       expect(getInput('firstname')).toHaveValue(firstname);
       userEvent.type(getInput('title'), title);
@@ -106,8 +107,8 @@ describe('ReviewForm Component', () => {
       });
     });
 
-    it('fails if thing is entered', async () => {
-      render(<ReviewForm onCompleted={onCompleted} />);
+    it('fails if nothing is entered', async () => {
+      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.click(getStarButton(5));
       userEvent.click(getButton('submit-review'));
       await waitFor(() => {
