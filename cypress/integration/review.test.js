@@ -31,5 +31,17 @@ describe('Leave a Review', () => {
       cy.findByText('Please provide your first name').should('exist');
       cy.location('pathname').should('eq', '/review');
     });
+
+    it('Allows you to continue after failing because an input is missing', () => {
+      getInput('title').type(title);
+      getInput('review').type(review);
+      getStarButton(3).click();
+      getButton('submit-review').click();
+      cy.findByText('Please provide your first name').should('exist');
+      cy.location('pathname').should('eq', '/review');
+      getInput('firstname').type(firstname);
+      getButton('submit-review').click();
+      cy.location('pathname').should('eq', '/thanks');
+    });
   });
 });
