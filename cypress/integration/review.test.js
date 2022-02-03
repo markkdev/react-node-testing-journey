@@ -21,4 +21,15 @@ describe('Leave a Review', () => {
       cy.location('pathname').should('eq', '/thanks');
     });
   });
+
+  context('Review Form Missing Inputs', () => {
+    it('fails if the firstname is missing', () => {
+      getInput('title').type(title);
+      getInput('review').type(review);
+      getStarButton(3).click();
+      getButton('submit-review').click();
+      cy.findByText('Please provide your first name').should('exist');
+      cy.location('pathname').should('eq', '/review');
+    });
+  });
 });
