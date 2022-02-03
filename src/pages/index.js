@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>JS Testing</title>
+        <title>React Node Testing</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container flex flex-col text-center">
