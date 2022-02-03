@@ -17,7 +17,7 @@ describe('Leave a Review', () => {
       getInput('title').type(title);
       getInput('review').type(review);
       getStarButton(3).click();
-      getButton('submit-review').click();
+      getButton('confirm-review').click();
       cy.location('pathname').should('eq', '/confirm');
     });
   });
@@ -27,7 +27,7 @@ describe('Leave a Review', () => {
       getInput('title').type(title);
       getInput('review').type(review);
       getStarButton(3).click();
-      getButton('submit-review').click();
+      getButton('confirm-review').click();
       cy.findByText('Please provide your first name').should('exist');
       cy.location('pathname').should('eq', '/review');
     });
@@ -36,11 +36,11 @@ describe('Leave a Review', () => {
       getInput('title').type(title);
       getInput('review').type(review);
       getStarButton(3).click();
-      getButton('submit-review').click();
+      getButton('confirm-review').click();
       cy.findByText('Please provide your first name').should('exist');
       cy.location('pathname').should('eq', '/review');
       getInput('firstname').type(firstname);
-      getButton('submit-review').click();
+      getButton('confirm-review').click();
       cy.location('pathname').should('eq', '/confirm');
     });
   });

@@ -21,9 +21,11 @@ function Confirm() {
       <Button
         className={'mt-4'}
         loading={status === 'loading'}
+        name="submit-review"
         onClick={async () => {
           const { payload } = await dispatch(submitReviewAsync());
           setResponseMessage(payload);
+          router.push('/thanks');
         }}
       >
         Submit

@@ -78,8 +78,8 @@ function ReviewForm({ onCompleted }) {
           setValue('rating', value);
         }}
       />
-      <Button type="submit" name="submit-review" className={s.button}>
-        Submit
+      <Button type="submit" name="confirm-review" className={s.button}>
+        Confirm
       </Button>
     </form>
   );

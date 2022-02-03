@@ -36,7 +36,7 @@ describe('ReviewForm Component', () => {
       expect(getInput('review')).toHaveValue(review);
       const starIcons = screen.getAllByTitle('star-icon');
       expect(starIcons[4]).toHaveAttribute('class', 'full');
-      userEvent.click(getButton('submit-review'));
+      userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(onCompleted).toHaveBeenCalled();
       });
@@ -52,7 +52,7 @@ describe('ReviewForm Component', () => {
       expect(getInput('review')).toHaveValue(review);
       const starIcons = screen.getAllByTitle('star-icon');
       expect(starIcons[4]).toHaveAttribute('class', 'full');
-      userEvent.click(getButton('submit-review'));
+      userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(screen.getByText('Please provide your first name'));
         expect(onCompleted).not.toHaveBeenCalled();
@@ -67,7 +67,7 @@ describe('ReviewForm Component', () => {
       expect(getInput('review')).toHaveValue(review);
       const starIcons = screen.getAllByTitle('star-icon');
       expect(starIcons[4]).toHaveAttribute('class', 'full');
-      userEvent.click(getButton('submit-review'));
+      userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(screen.getByText('Please provide a title'));
         expect(onCompleted).not.toHaveBeenCalled();
@@ -82,7 +82,7 @@ describe('ReviewForm Component', () => {
       expect(getInput('title')).toHaveValue(title);
       const starIcons = screen.getAllByTitle('star-icon');
       expect(starIcons[4]).toHaveAttribute('class', 'full');
-      userEvent.click(getButton('submit-review'));
+      userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(screen.getByText('Please provide your review'));
         expect(onCompleted).not.toHaveBeenCalled();
@@ -98,7 +98,7 @@ describe('ReviewForm Component', () => {
       userEvent.type(getInput('review'), review);
       expect(getInput('review')).toHaveValue(review);
       userEvent.click(getStarButton(5));
-      userEvent.click(getButton('submit-review'));
+      userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(
           screen.getByText('Your rating must be greater than or equal to 1'),
@@ -110,7 +110,7 @@ describe('ReviewForm Component', () => {
     it('fails if nothing is entered', async () => {
       renderWithStore(<ReviewForm onCompleted={onCompleted} />);
       userEvent.click(getStarButton(5));
-      userEvent.click(getButton('submit-review'));
+      userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(screen.getByText('Please provide a title'));
         expect(screen.getByText('Please provide your review'));
