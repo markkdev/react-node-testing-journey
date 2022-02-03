@@ -1,21 +1,23 @@
 import matchMediaPolyfill from 'mq-polyfill';
 
-if (typeof window !== 'undefined') {
-  matchMediaPolyfill(window);
+export function setupMediaPolyfill() {
+  if (typeof window !== 'undefined') {
+    matchMediaPolyfill(window);
 
-  window.matchMedia('(max-width: 640px)');
-  window.matchMedia('(max-width: 768px)');
-  window.matchMedia('(max-width: 1024px)');
-  window.matchMedia('(max-width: 1280px)');
+    window.matchMedia('(max-width: 640px)');
+    window.matchMedia('(max-width: 768px)');
+    window.matchMedia('(max-width: 1024px)');
+    window.matchMedia('(max-width: 1280px)');
 
-  window.resizeTo = function resizeTo(width, height) {
-    Object.assign(this, {
-      innerWidth: width,
-      innerHeight: height,
-      outerWidth: width,
-      outerHeight: height,
-    }).dispatchEvent(new this.Event('resize'));
-  };
+    window.resizeTo = function resizeTo(width, height) {
+      Object.assign(this, {
+        innerWidth: width,
+        innerHeight: height,
+        outerWidth: width,
+        outerHeight: height,
+      }).dispatchEvent(new this.Event('resize'));
+    };
+  }
 }
 
 export const breakpoints = {
