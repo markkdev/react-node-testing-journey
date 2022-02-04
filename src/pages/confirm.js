@@ -4,7 +4,6 @@ import React from 'react';
 import { Button, Text } from '../components/common';
 import { Layout } from '../components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { ReviewFormConfirmation } from '../components/ReviewFormConfirmation';
 import { selectReviewForm, submitReviewAsync } from '../slices/review';
 
 function Confirm() {
@@ -16,7 +15,7 @@ function Confirm() {
     <Layout>
       <Text variant="h1">Confirm before submitting</Text>
       <div className="mt-10 w-full mx-auto flex justify-center">
-        <ReviewFormConfirmation />
+        {/* <ReviewFormConfirmation /> */}
       </div>
       <Button
         className={'mt-4'}
