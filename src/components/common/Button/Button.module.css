@@ -1,3 +1,0 @@
-.root {
-  @apply outline-none min-w-[2.5rem] min-h-[3rem] px-4 rounded-lg bg-red-500 text-white py-2 hover:bg-white hover:text-red-500 border-2 border-transparent hover:border-slate-200;
-}
