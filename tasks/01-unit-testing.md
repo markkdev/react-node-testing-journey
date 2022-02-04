@@ -65,10 +65,6 @@ _Feel free to commit your answers_
 
 ![Confirmation Page](../public/confirmation_page.png)
 
-##### To continue run
-
-    git checkout unit-testing-02
-
 ### More Learning Resources
 
 [12 Recipes for testing React Applications with RTL](https://joaoforja.com/blog/recipes-for-testing-react-apps-tl/)
@@ -76,3 +72,7 @@ _Feel free to commit your answers_
 [Thought Process for testing a React Application](https://joaoforja.com/blog/how-to-write-tests-react-app-case-study/)
 
 [5 things you didnt know about testing library](https://polvara.me/posts/five-things-you-didnt-know-about-testing-library)
+
+##### To continue run
+
+    git checkout unit-testing-02
