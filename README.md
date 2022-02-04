@@ -1,4 +1,4 @@
-# Testing Journey
+# React Node Testing Journey
 
 The purpose of this application is to demonstrate React and Node testing recipes across the front and back ends using
 
