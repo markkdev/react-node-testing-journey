@@ -40,7 +40,10 @@ We verify that several units work together in harmony.
 
 ## Tasks
 
-No tasks here, please move forward...
+1. Create the components and integration tests for the review form
+2. Create the components and integration tests for the confirm page
+
+I've left in all of the redux boilerplate to save time.
 
 ### More Resources
 
