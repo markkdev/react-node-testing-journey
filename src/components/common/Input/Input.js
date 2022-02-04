@@ -18,7 +18,7 @@ function Input({
         {label}
       </label>
       <InputType
-        className={cn(s.input)}
+        className={cn(s.input, errors ? s.errorBorder : '')}
         aria-label={name}
         id={name}
         {...register}

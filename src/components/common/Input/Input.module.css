@@ -13,3 +13,7 @@
 .error {
   @apply text-sm text-red-700 mt-2;
 }
+
+.errorBorder {
+  @apply border border-red-500;
+}

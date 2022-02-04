@@ -1,8 +1,7 @@
-import React, { useState, memo } from 'react';
-import { Star } from '..';
+import React, { useState } from 'react';
+import { Star, Button } from '../common';
 import cn from 'classnames';
 import s from './Stars.module.css';
-import { Button } from '..';
 
 function Stars({ rating, className, onClick, error }) {
   const [hoverIndex, setHoverIndex] = useState(null);
@@ -21,7 +20,7 @@ function Stars({ rating, className, onClick, error }) {
               className={s.buttonWrapper}
               onMouseEnter={() => setHoverIndex(i)}
               onMouseLeave={() => setHoverIndex(null)}
-              onClick={() => onClick(i === rating - 1 ? 0 : i + 1)}
+              onClick={() => onClick(i + 1)}
               type="button"
               name={`select-rating-${i + 1}`}
             >

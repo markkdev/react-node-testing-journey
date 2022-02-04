@@ -2,10 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Button, Input, Stars } from '../common';
+import { Button, Input } from '../common';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectReviewForm, setFormValues } from '../../slices/review';
 import s from './ReviewForm.module.css';
+import { Stars } from '../Stars';
 
 const schema = yup
   .object({
