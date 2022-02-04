@@ -17,7 +17,7 @@ We want to be confident that component `A` renders correctly but if we don't tes
 
 ### Integration tests goal
 
-1. We want to test how our components work together while mocking some things
+1. We want to test how our components work together while mocking as little as possible
 
 - HTTP requests **(GQL included)**
 - Accessing window/dom properties
@@ -34,3 +34,4 @@ Integration tests give us **balance** between **confidence** and **effort**.
 
 1. What kind of integration is happening between components in our form?
 2. What integration is happening between components on the confirm page?
+3. What kind of integration do we expect to happen between the server and client?
