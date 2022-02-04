@@ -30,7 +30,6 @@ function ReviewForm({ onCompleted }) {
     formState: { errors },
     watch,
     setValue,
-    getValues,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: reviewForm,

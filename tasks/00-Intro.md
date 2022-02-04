@@ -44,6 +44,6 @@ The user should be taken to a confirmation page.
    `/api/submit-review` as a `POST` request.
 5. The user should be taken to the thank you page `/thanks` after their review has been submitted.
 
-To continue run
+##### To continue run:
 
     git checkout unit-testing-01

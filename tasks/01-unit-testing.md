@@ -51,9 +51,9 @@ _Feel free to commit your answers_
 
 ![Confirmation Page](../public/confirmation_page.png)
 
-To continue run
+##### To continue run
 
-    git checkout unit-testing-01
+    git checkout unit-testing-02
 
 ### More Learning Resources
 

@@ -89,38 +89,12 @@ describe('ReviewForm Component', () => {
       });
     });
 
-    it('fails if no stars are selected', async () => {
-      renderWithStore(<ReviewForm onCompleted={onCompleted} />);
-      userEvent.type(getInput('firstname'), firstname);
-      expect(getInput('firstname')).toHaveValue(firstname);
-      userEvent.type(getInput('title'), title);
-      expect(getInput('title')).toHaveValue(title);
-      userEvent.type(getInput('review'), review);
-      expect(getInput('review')).toHaveValue(review);
-      userEvent.click(getStarButton(5));
-      userEvent.click(getButton('confirm-review'));
-      await waitFor(() => {
-        expect(
-          screen.getByText('Your rating must be greater than or equal to 1'),
-        );
-        expect(onCompleted).not.toHaveBeenCalled();
-      });
-    });
-
     it('fails if nothing is entered', async () => {
       renderWithStore(<ReviewForm onCompleted={onCompleted} />);
-      userEvent.click(getStarButton(5));
       userEvent.click(getButton('confirm-review'));
       await waitFor(() => {
         expect(screen.getByText('Please provide a title'));
         expect(screen.getByText('Please provide your review'));
-
-        expect(
-          screen.getByText('Your rating must be greater than or equal to 1'),
-        );
-        expect(
-          screen.getByText('Your rating must be greater than or equal to 1'),
-        );
         expect(onCompleted).not.toHaveBeenCalled();
       });
     });

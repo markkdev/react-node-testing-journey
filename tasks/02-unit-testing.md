@@ -37,3 +37,7 @@ These functions are also ideal for unit testing.
 [The Modern Way To Test React Components](https://blog.bitsrc.io/react-testing-library-the-modern-way-to-test-react-components-778ef578d0d9)
 
 [Confident React](https://www.youtube.com/watch?v=qXRPHRgcXJ0&list=PLV5CVI1eNcJgNqzNwcs4UKrlJdhfDjshf)
+
+##### To continue run
+
+    git checkout integration-testing-03
