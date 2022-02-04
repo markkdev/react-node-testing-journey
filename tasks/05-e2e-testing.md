@@ -50,6 +50,9 @@ Other reasons to lean more towards RTL.
 
 1. Write an end 2 end test for filling out the form
 2. Write an end 2 end test confirming the form contents
+3. Add the components to the pages in the `~src/pages` directory
+
+The App should be functional.
 
 ### Thank you
 
