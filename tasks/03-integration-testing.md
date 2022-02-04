@@ -30,8 +30,17 @@ We want to be confident that component `A` renders correctly but if we don't tes
 
 Integration tests give us **balance** between **confidence** and **effort**.
 
-## Task
+## Discussion
 
 1. What kind of integration is happening between components in our form?
 2. What integration is happening between components on the confirm page?
 3. What kind of integration do we expect to happen between the server and client?
+
+## Tasks
+
+1. Create folders in `~src/components/` that represent the groups of components we'll need for our pages.
+2. Create a dummy endpoint that we can call on.
+
+##### To continue run
+
+    git checkout integration-testing-04

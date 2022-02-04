@@ -22,11 +22,22 @@ These functions are simple and can be independent or composed of several functio
 
 These functions are also ideal for unit testing.
 
-### Tasks
+### Discussion
 
 1. What are the basic testing requirements for our button?
 2. What are the basic testing requirements for our input?
 3. Is there a basic testing requirement for the stars in the form?
+
+### Tasks
+
+1. In the folders you previously created, create a component and unit tests to verify that the component behaves as expected.
+
+...
+
+    Bonus points for using TDD
+        1. Write tests that fail.
+        2. Write your component.
+        3. Ensure your tests pass.
 
 ### More Reading
 

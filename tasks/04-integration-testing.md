@@ -28,33 +28,15 @@ Logic happening in an action or a reducer can almost **ALWAYS** be extracted int
 
 Our goal is confidence. If you feel like adding a layer of testing to your code will improve your confidence, do it.
 
-## Integration Testing vs End 2 End Testing
-
-Is it really worth it to write integration and End 2 End tests?
-
-Yes.
-
-What are our goals?
-
 ### Integration test goals
 
-We are assering that the components we've combined together
+We are assering that
 
-1. Work together
-2. Our state is what we expect it to be
+1. The components we've combined together work together.
+2. Our state is what we expect it to be.
 3. Our requests are working as expected.
 
 We verify that several units work together in harmony.
-
-### End 2 End testing goals
-
-In an end 2 end test we are the user in the real world.
-
-1. We interact with our entire application
-2. We load real pages
-3. We send & receive real requests (mostly)
-
-We are building a helper robot that behaves like a user to click around the app and verify that it functions correctly.
 
 ## Tasks
 
@@ -63,3 +45,7 @@ No tasks here, please move forward...
 ### More Resources
 
 [Static vs Unit vs Integration vs E2E](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests)
+
+##### To continue run
+
+    git checkout e2e-testing-05

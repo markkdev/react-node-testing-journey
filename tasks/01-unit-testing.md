@@ -31,11 +31,25 @@
   - toHaveClass()
   - Etc..
 
-## Tasks
+# Note
+
+### RTL and Jest work together
+
+They share the same environment.
+
+You are always using jest.
+
+Only when you are testing react code do you use RTL.
+
+## Discussion
 
 1. Identify all of the unique elements throughout the review and confirmation pages
    - How many components can you break it up into?
    - How many can be shared?
+
+## Tasks
+
+1. Create folders in the `~src/components/common` directory with each unique component you think you'll need
 
 ### Component List
 
